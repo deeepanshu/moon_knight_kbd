@@ -5,27 +5,27 @@
 	(uuid "5e57e9b8-50c7-48fe-a23d-55970fa3d315")
 	(paper "A4")
 	(lib_symbols
-		(symbol "74xGxx:SN74LVC1G125DBV"
+		(symbol "Connector_Audio:AudioJack4"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at -10.16 7.62 0)
+			(property "Reference" "J"
+				(at 0 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "SN74LVC1G125DBV"
-				(at 2.54 -7.62 0)
+			(property "Value" "AudioJack4"
+				(at 0 6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(property "Footprint" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -34,7 +34,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf"
+			(property "Datasheet" "~"
 				(at 0 0 0)
 				(effects
 					(font
@@ -43,7 +43,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Single Buffer Gate Tri-State, Low-Voltage CMOS, SOT-23-5"
+			(property "Description" "Audio Jack, 4 Poles (TRRS)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -52,7 +52,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "Single Gate Buff Tri-State LVC CMOS"
+			(property "ki_keywords" "audio jack receptacle stereo headphones TRRS connector"
 				(at 0 0 0)
 				(effects
 					(font
@@ -61,7 +61,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SOT?23*"
+			(property "ki_fp_filters" "Jack*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -70,11 +70,57 @@
 					(hide yes)
 				)
 			)
-			(symbol "SN74LVC1G125DBV_0_1"
+			(symbol "AudioJack4_0_1"
+				(rectangle
+					(start -6.35 -5.08)
+					(end -7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(polyline
 					(pts
-						(xy -7.62 6.35) (xy -7.62 -6.35) (xy 5.08 0) (xy -7.62 6.35)
+						(xy -5.715 -5.08) (xy -5.08 -5.715) (xy -4.445 -5.08) (xy -4.445 2.54) (xy 2.54 2.54)
 					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -5.08) (xy -1.27 -5.715) (xy -0.635 -5.08) (xy -0.635 -2.54) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 0.635 -5.715) (xy 1.27 -5.08) (xy 2.54 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.54 3.81)
+					(end -6.35 -7.62)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -83,11 +129,23 @@
 						(type background)
 					)
 				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy -2.54 0) (xy -2.54 -5.08) (xy -3.175 -5.715) (xy -3.81 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "SN74LVC1G125DBV_1_1"
-				(pin input line
-					(at -15.24 0 0)
-					(length 7.62)
+			(symbol "AudioJack4_1_1"
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
 					(name "~"
 						(effects
 							(font
@@ -95,7 +153,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -103,45 +161,9 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -5.08 10.16 270)
-					(length 5.08)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -5.08 -10.16 90)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input inverted
-					(at 0 10.16 270)
-					(length 7.62)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
 					(name "~"
 						(effects
 							(font
@@ -149,7 +171,7 @@
 							)
 						)
 					)
-					(number "1"
+					(number "R2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -157,9 +179,9 @@
 						)
 					)
 				)
-				(pin tri_state line
-					(at 12.7 0 180)
-					(length 7.62)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
 					(name "~"
 						(effects
 							(font
@@ -167,7 +189,25 @@
 							)
 						)
 					)
-					(number "4"
+					(number "R1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "T"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1575,302 +1615,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "ScottoKeebs:Placeholder_Resistor"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 0 2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Resistor"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 -1.778 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Placeholder_Resistor_0_1"
-				(rectangle
-					(start 2.54 -1.016)
-					(end -2.54 1.016)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Placeholder_Resistor_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "ScottoKeebs:Placeholder_TRRS"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 15.24 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "TRRS"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "ScottoKeebs_Components:TRRS_PJ-320A"
-				(at 3.81 0 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 3.81 0 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Placeholder_TRRS_0_1"
-				(rectangle
-					(start -3.81 12.7)
-					(end 5.08 12.7)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -3.81 0)
-					(end -3.81 12.7)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -3.81 0)
-					(end 5.08 0)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 5.08 12.7)
-					(end 5.08 0)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Placeholder_TRRS_1_1"
-				(pin input line
-					(at -8.89 10.16 0)
-					(length 5.08)
-					(name "TIP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -8.89 7.62 0)
-					(length 5.08)
-					(name "RING1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -8.89 5.08 0)
-					(length 5.08)
-					(name "RING2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -8.89 2.54 0)
-					(length 5.08)
-					(name "SLEEVE"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5006,28 +4750,6 @@
 			)
 		)
 	)
-	(global_label "LED_IN"
-		(shape input)
-		(at 142.24 175.26 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "030f4a84-d87d-4a78-a491-d40a8041160e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 151.5752 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Col2"
 		(shape input)
 		(at 53.34 168.91 270)
@@ -5046,28 +4768,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
-		(at 129.54 165.1 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "166586ea-405c-47ee-a153-a992c2dcb7f1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.54 158.2443 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -5244,28 +4944,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "LED_IN_STEP"
-		(shape input)
-		(at 43.18 151.13 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "34fc9b9e-42ca-4993-9c2e-4e0b4dc05090")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 28.2811 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -5514,22 +5192,22 @@
 	)
 	(global_label "TRRS_TX"
 		(shape input)
-		(at 133.35 137.16 180)
+		(at 149.86 157.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "7da65406-5e7d-4dd5-8f80-d5ce4cdd6a63")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 122.503 137.16 0)
+			(at 160.707 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5558,44 +5236,44 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 140.97 134.62 180)
+		(at 142.24 160.02 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "81783d2e-c145-4538-ab87-d5ffe3d6267f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 135.6867 134.62 0)
+			(at 147.5233 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
 	)
 	(global_label "TRRS_RX"
 		(shape input)
-		(at 133.35 139.7 180)
+		(at 149.86 154.94 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "8255ceaa-2b44-4395-91d8-1a017a5a1f3e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 122.2006 139.7 0)
+			(at 161.0094 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5668,28 +5346,6 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 124.46 185.42 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "99f154fa-2f9f-474b-acfe-9ae7f6f33025")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 124.46 192.2757 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
 		(at 148.59 109.22 180)
 		(fields_autoplaced yes)
 		(effects
@@ -5754,28 +5410,6 @@
 			)
 		)
 	)
-	(global_label "GND"
-		(shape input)
-		(at 27.94 175.26 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "af03ebb7-080b-4eea-93c6-c9b1c34c285d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 21.0843 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "5V"
 		(shape input)
 		(at 148.59 83.82 180)
@@ -5816,6 +5450,50 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "5V"
+		(shape input)
+		(at 27.94 175.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c8d13b1f-8474-4625-9bc4-327e84f19148")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.6567 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED_IN"
+		(shape input)
+		(at 43.18 151.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ca7ce7b1-327b-4743-ad2a-ababbab6cbc4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 33.8448 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5864,9 +5542,9 @@
 			)
 		)
 	)
-	(global_label "5V"
+	(global_label "GND"
 		(shape input)
-		(at 124.46 165.1 90)
+		(at 142.24 152.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5874,36 +5552,14 @@
 			)
 			(justify left)
 		)
-		(uuid "ea10b441-799b-43db-b369-6ae54b25e857")
+		(uuid "edbda931-31bb-4167-aa70-a57ec09ced1c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 124.46 159.8167 90)
+			(at 149.0957 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
-		(at 140.97 142.24 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "edbda931-31bb-4167-aa70-a57ec09ced1c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.1143 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -5965,28 +5621,6 @@
 		(uuid "f9acacce-7ccf-40a0-a150-663e53026e88")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 17.2743 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "LED_IN_STEP"
-		(shape input)
-		(at 114.3 175.26 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fba37213-c227-41fb-8560-f404b6714d31")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.4011 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8482,83 +8116,6 @@
 		)
 	)
 	(symbol
-		(lib_id "74xGxx:SN74LVC1G125DBV")
-		(at 129.54 175.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "449267f6-6960-4f9a-90e7-4010090b29ad")
-		(property "Reference" "U2"
-			(at 143.51 168.8398 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "74HCT1G125GW"
-			(at 143.51 171.3798 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
-			(at 129.54 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf"
-			(at 129.54 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Single Buffer Gate Tri-State, Low-Voltage CMOS, SOT-23-5"
-			(at 129.54 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4649a253-b692-4255-979d-48788bfcdcde")
-		)
-		(pin "5"
-			(uuid "4d0a9537-9e78-407a-a846-16ca18fbd03e")
-		)
-		(pin "1"
-			(uuid "27be115a-3ef8-415a-a549-c9a55d7afcb7")
-		)
-		(pin "4"
-			(uuid "60869d7e-afa3-4a8c-a89a-a8ca7b0e0dae")
-		)
-		(pin "3"
-			(uuid "8e563661-bd09-49a5-8ae2-d77c968909c9")
-		)
-		(instances
-			(project ""
-				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
-					(reference "U2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PCM_marbastlib-various:SK6812MINI-E")
 		(at 199.39 133.35 180)
 		(unit 1)
@@ -9986,82 +9543,6 @@
 			(project "moon_knight_v2_left"
 				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
 					(reference "C15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ScottoKeebs:Placeholder_TRRS")
-		(at 149.86 144.78 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7bc0f7a6-e8d4-4cf9-9ae8-2f181558b388")
-		(property "Reference" "U1"
-			(at 156.21 137.1599 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TRRS"
-			(at 156.21 139.6999 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "ScottoKeebs_Components:TRRS_PJ-320A"
-			(at 153.67 144.78 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 153.67 144.78 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 149.86 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6c2b2690-a75d-43ec-94fc-d9015d371dd8")
-		)
-		(pin "3"
-			(uuid "d05df6a8-339e-4333-a203-4bcbf97936cd")
-		)
-		(pin "4"
-			(uuid "3c23f6cf-bb2a-4e1e-b2ee-be6dccb36248")
-		)
-		(pin "1"
-			(uuid "0ae0c446-f735-43fe-a03c-6a3694e700fe")
-		)
-		(instances
-			(project ""
-				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
-					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -11568,73 +11049,6 @@
 		)
 	)
 	(symbol
-		(lib_id "ScottoKeebs:Placeholder_Resistor")
-		(at 137.16 137.16 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "abc8da3c-d2b3-4450-9dae-5b62f8a17cc8")
-		(property "Reference" "R1"
-			(at 137.16 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100R"
-			(at 137.16 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 137.16 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 137.16 137.16 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 137.16 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "50f18f87-4602-432d-b4e7-45613ef59492")
-		)
-		(pin "2"
-			(uuid "51b467ba-2a0a-4cbe-9d77-aad36d19b1bd")
-		)
-		(instances
-			(project "moon_knight_v2_left"
-				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PCM_marbastlib-choc:choc_v1_SW_HS_CPG135001S30")
 		(at 44.45 59.69 0)
 		(unit 1)
@@ -11842,6 +11256,74 @@
 			(project "moon_knight_v2_left"
 				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
 					(reference "LED19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 146.05 154.94 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b2ad63c7-d379-4d3b-91d6-e71c29abb7e8")
+		(property "Reference" "R2"
+			(at 146.05 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 146.05 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 146.05 153.162 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 146.05 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a2d74bcd-d6fd-4bcb-8e14-ca3ba60ea95c")
+		)
+		(pin "1"
+			(uuid "5aa4e770-f5ac-435e-8e60-e47cd219f85c")
+		)
+		(instances
+			(project ""
+				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -12903,6 +12385,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 146.05 157.48 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d8ebdfc5-d2a8-41d1-9fe1-c8c522714d38")
+		(property "Reference" "R1"
+			(at 146.05 163.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 146.05 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 146.05 155.702 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 146.05 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b8369b6a-8e77-44e6-9d62-26150f03c8e0")
+		)
+		(pin "2"
+			(uuid "5c06e965-2e64-4ae9-bb3a-37326a1c46f2")
+		)
+		(instances
+			(project ""
+				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diode:1N4148W")
 		(at 34.29 66.04 90)
 		(unit 1)
@@ -13231,74 +12781,6 @@
 		)
 	)
 	(symbol
-		(lib_id "ScottoKeebs:Placeholder_Resistor")
-		(at 137.16 139.7 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ed4efa97-9340-4d1b-b54e-4b519369f5cb")
-		(property "Reference" "R2"
-			(at 137.16 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100R"
-			(at 137.16 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 137.16 141.478 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 137.16 139.7 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 137.16 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a9b2804b-a5d7-4b16-b5c8-27648e1cc0d4")
-		)
-		(pin "2"
-			(uuid "bb1446c0-9377-4d68-8422-e8d70af6c0db")
-		)
-		(instances
-			(project "moon_knight_v2_left"
-				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 99.06 181.61 0)
 		(unit 1)
@@ -13427,6 +12909,80 @@
 			(project "moon_knight_v2_left"
 				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
 					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Audio:AudioJack4")
+		(at 137.16 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f784d6f0-84b9-4c80-bd92-5784005c741f")
+		(property "Reference" "J1"
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AudioJack4"
+			(at 134.62 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-xp-various:CON_MJ-4PP-9_Reversible"
+			(at 137.16 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 137.16 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Audio Jack, 4 Poles (TRRS)"
+			(at 137.16 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "S"
+			(uuid "52bcab92-351c-4441-ba15-51fff735607a")
+		)
+		(pin "T"
+			(uuid "1a6a5ca4-e52d-4b8d-b178-dcbadf022219")
+		)
+		(pin "R1"
+			(uuid "27db229f-7d77-49ce-92a1-64184579deef")
+		)
+		(pin "R2"
+			(uuid "cd5abeca-b941-4a53-a88d-c93a21ded725")
+		)
+		(instances
+			(project ""
+				(path "/5e57e9b8-50c7-48fe-a23d-55970fa3d315"
+					(reference "J1")
 					(unit 1)
 				)
 			)
