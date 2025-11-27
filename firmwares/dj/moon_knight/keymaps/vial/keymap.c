@@ -87,34 +87,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+void keyboard_post_init_kb(void) {
+    keyboard_post_init_user();
+}
+
 void keyboard_post_init_user(void) {
-    debug_enable=true;
-    debug_matrix=true;
-    debug_keyboard=true;
+    // debug_enable=true;
+    // debug_matrix=true;
+    // debug_keyboard=true;
 
     rgblight_enable_noeeprom();
     rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_MOOD + 1);
-
-    // Setup GP16 as output for layer indicator LED
-    gpio_set_pin_output(GP16);
-    gpio_write_pin_low(GP16);  // Start with LED off
-
-    uprintf("Keyboard initialized!\n");
-    uprintf("Is master: %d\n", is_keyboard_master());
-    uprintf("Split enabled: %d\n", 1);
 }
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-    // LED behavior based on active layer
-    switch (get_highest_layer(state)) {
-        case 0:  // Base layer
-            gpio_write_pin_low(GP16);  // MCU LED off
-            break;
-        case 1:  // Numbers layer
-        case 2:  // Symbols layer
-        case 3:  // Function layer
-            gpio_write_pin_high(GP16);  // MCU LED on
-            break;
-    }
-    return state;
-}
