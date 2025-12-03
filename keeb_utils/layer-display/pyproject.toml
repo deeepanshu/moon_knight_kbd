@@ -1,0 +1,20 @@
+[project]
+name = "layer-display"
+version = "0.1.0"
+description = "macOS menubar app to display current keyboard layer from QMK"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "hidapi>=0.14.0.post4",
+    "rumps>=0.4.0",
+]
+
+[project.scripts]
+layer-display = "layer_display.main:main"
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

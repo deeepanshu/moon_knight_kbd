@@ -87,6 +87,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+#ifdef RAW_ENABLE
+#include "raw_hid.h"
+
+// Message IDs for HID communication
+#define MSG_LAYER_UPDATE 0x01
+
+// Track current layer to only send updates on changes
+static uint8_t current_layer = 0;
+
+// Called by QMK whenever the layer changes
+layer_state_t layer_state_set_user(layer_state_t state) {
+    uint8_t new_layer = get_highest_layer(state);
+
+    // Only send if layer actually changed
+    if (new_layer != current_layer) {
+        current_layer = new_layer;
+
+        // Send HID message: [MSG_ID, LAYER, 0, 0, ..., 0] (32 bytes total)
+        uint8_t data[32] = {0};
+        data[0] = MSG_LAYER_UPDATE;
+        data[1] = current_layer;
+
+        raw_hid_send(data, sizeof(data));
+    }
+
+    return state;
+}
+#endif
+
 void keyboard_post_init_kb(void) {
     keyboard_post_init_user();
 }
