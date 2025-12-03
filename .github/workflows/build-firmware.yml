@@ -15,15 +15,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: qmkfm/qmk_cli:latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
-    - name: Install ARM toolchain
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi libnewlib-arm-none-eabi
 
     - name: Checkout Vial QMK firmware
       uses: actions/checkout@v4
@@ -31,11 +28,6 @@ jobs:
         repository: vial-kb/vial-qmk
         submodules: recursive
         path: vial-qmk
-
-    - name: Install QMK CLI
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install qmk
 
     - name: Link custom keyboard
       run: |
