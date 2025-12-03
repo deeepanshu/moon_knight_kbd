@@ -1,10 +1,11 @@
-name: Build QMK Firmware
+name: Build Vial Firmware
 
 on:
   push:
     branches: [ main ]
     paths:
       - 'firmwares/**'
+      - '.github/workflows/build-firmware.yml'
   pull_request:
     branches: [ main ]
     paths:
@@ -19,36 +20,36 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Checkout QMK firmware
+    - name: Install ARM toolchain
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi libnewlib-arm-none-eabi
+
+    - name: Checkout Vial QMK firmware
       uses: actions/checkout@v4
       with:
-        repository: qmk/qmk_firmware
+        repository: vial-kb/vial-qmk
         submodules: recursive
-        path: qmk_firmware
+        path: vial-qmk
 
     - name: Install QMK CLI
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install qmk
 
-    - name: Setup QMK
-      run: |
-        cd qmk_firmware
-        qmk setup -y
-
     - name: Link custom keyboard
       run: |
-        ln -s $GITHUB_WORKSPACE/firmwares/dj qmk_firmware/keyboards/dj
+        ln -s $GITHUB_WORKSPACE/firmwares/dj vial-qmk/keyboards/dj
 
-    - name: Build firmware
+    - name: Build Vial firmware
       run: |
-        cd qmk_firmware
-        qmk compile -kb dj/moon_knight -km vial
+        cd vial-qmk
+        make dj/moon_knight:vial
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v4
       with:
-        name: moon_knight_firmware
-        path: qmk_firmware/*.uf2
+        name: moon_knight_vial_firmware
+        path: vial-qmk/*.uf2
         if-no-files-found: error
         retention-days: 30
