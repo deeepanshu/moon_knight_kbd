@@ -1,6 +1,6 @@
 {
   "name": "DJ Moon Knight",
-  "lighting": "none",
+  "lighting": "qmk_rgblight",
   "matrix": {
     "rows": 8,
     "cols": 6
