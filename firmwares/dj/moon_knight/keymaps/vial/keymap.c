@@ -3,14 +3,6 @@
 
 #include QMK_KEYBOARD_H
 
-// Layer color palette (HSV format)
-#define RGB_DARK_BLUE_GREEN 139, 138, 83   // #264653
-#define RGB_TEAL            122, 186, 157  // #2a9d8f
-#define RGB_SAGE_GREEN      74, 74, 177    // #8ab17d
-#define RGB_YELLOW          30, 138, 233   // #e9c46a
-#define RGB_ORANGE          18, 153, 244   // #f4a261
-#define RGB_CORAL           8, 165, 231    // #e76f51
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * LAYER 0 - BASE (Default typing layer)
@@ -161,26 +153,26 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
         // Set RGB color based on layer
         switch (current_layer) {
-            case 0:  // Base layer
-                rgblight_sethsv_noeeprom(RGB_DARK_BLUE_GREEN);
+            case 0:  // Base layer - Cyan (closest to #264653)
+                rgblight_sethsv_noeeprom(HSV_CYAN);
                 break;
-            case 1:  // Numbers & Navigation
-                rgblight_sethsv_noeeprom(RGB_TEAL);
+            case 1:  // Numbers & Navigation - Teal
+                rgblight_sethsv_noeeprom(HSV_TEAL);
                 break;
-            case 2:  // Symbols & Brackets
-                rgblight_sethsv_noeeprom(RGB_SAGE_GREEN);
+            case 2:  // Symbols & Brackets - Spring green (closest to #8ab17d)
+                rgblight_sethsv_noeeprom(HSV_SPRINGGREEN);
                 break;
-            case 3:  // Function Keys & Media
-                rgblight_sethsv_noeeprom(RGB_YELLOW);
+            case 3:  // Function Keys & Media - Gold/Yellow
+                rgblight_sethsv_noeeprom(HSV_GOLD);
                 break;
-            case 4:  // Reserved
-                rgblight_sethsv_noeeprom(RGB_ORANGE);
+            case 4:  // Reserved - Orange
+                rgblight_sethsv_noeeprom(HSV_ORANGE);
                 break;
-            case 5:  // Reserved
-                rgblight_sethsv_noeeprom(RGB_CORAL);
+            case 5:  // Reserved - Coral
+                rgblight_sethsv_noeeprom(HSV_CORAL);
                 break;
             default:
-                rgblight_sethsv_noeeprom(RGB_DARK_BLUE_GREEN);
+                rgblight_sethsv_noeeprom(HSV_CYAN);
                 break;
         }
     }
@@ -200,6 +192,6 @@ void keyboard_post_init_user(void) {
 
     rgblight_enable_noeeprom();
     rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);  // Solid color mode
-    rgblight_sethsv_noeeprom(RGB_DARK_BLUE_GREEN);  // Start with layer 0 color
+    rgblight_sethsv_noeeprom(HSV_CYAN);  // Start with layer 0 color
 }
 
