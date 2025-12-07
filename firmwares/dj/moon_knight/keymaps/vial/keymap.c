@@ -153,26 +153,26 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
         // Set RGB color based on layer
         switch (current_layer) {
-            case 0:  // Base layer - White
-                rgblight_sethsv_noeeprom(0, 0, 255);
+            case 0:  // Base layer - Dark blue-green #264653
+                rgblight_sethsv_noeeprom(139, 138, 83);
                 break;
-            case 1:  // Numbers & Navigation - Blue
-                rgblight_sethsv_noeeprom(170, 255, 255);
+            case 1:  // Numbers & Navigation - Teal #2a9d8f
+                rgblight_sethsv_noeeprom(122, 186, 157);
                 break;
-            case 2:  // Symbols & Brackets - Green
-                rgblight_sethsv_noeeprom(85, 255, 255);
+            case 2:  // Symbols & Brackets - Sage green #8ab17d
+                rgblight_sethsv_noeeprom(74, 74, 177);
                 break;
-            case 3:  // Function Keys & Media - Purple
-                rgblight_sethsv_noeeprom(213, 255, 255);
+            case 3:  // Function Keys & Media - Yellow #e9c46a
+                rgblight_sethsv_noeeprom(30, 138, 233);
                 break;
-            case 4:  // Reserved - Orange
-                rgblight_sethsv_noeeprom(28, 255, 255);
+            case 4:  // Reserved - Orange #f4a261
+                rgblight_sethsv_noeeprom(18, 153, 244);
                 break;
-            case 5:  // Reserved - Cyan
-                rgblight_sethsv_noeeprom(128, 255, 255);
+            case 5:  // Reserved - Coral/red #e76f51
+                rgblight_sethsv_noeeprom(8, 165, 231);
                 break;
             default:
-                rgblight_sethsv_noeeprom(0, 0, 255);  // Default to white
+                rgblight_sethsv_noeeprom(139, 138, 83);  // Default to dark blue-green
                 break;
         }
     }
@@ -192,6 +192,6 @@ void keyboard_post_init_user(void) {
 
     rgblight_enable_noeeprom();
     rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);  // Solid color mode
-    rgblight_sethsv_noeeprom(0, 0, 255);  // Start with white (layer 0)
+    rgblight_sethsv_noeeprom(139, 138, 83);  // Start with dark blue-green (layer 0)
 }
 
