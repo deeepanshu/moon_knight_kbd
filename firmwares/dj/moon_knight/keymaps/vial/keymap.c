@@ -6,23 +6,23 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * LAYER 0 - BASE (Default typing layer)
-      * Home Row Mods: F and J act as Shift when held
+      * Home Row Mods: All home row keys are mod-taps
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │Esc│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │Bsp│
+      * │Tab│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │Bsp│
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Ctl│ A │ S │ D │F/Sft│ G │     │ H │J/Sft│ K │ L │ ; │ ' │
+      * │L5/Bsp│Ctl/A│GUI/S│Alt/D│Sft/F│ G │ │ H │Sft/J│Alt/K│GUI/L│Ctl/;│ ' │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Sft│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │Sft│
+      * │Esc│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │Sft│
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *           ┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
-      *           │Tab│GUI│Spc│L1 │   │L2 │Spc│Ent│Alt│
+      *           │GUI│L1 │Spc│S-G-Spc│   │A-Spc│Spc│Ent│Alt│
       *           └───┴───┴───┴───┘   └───┴───┴───┴───┘
       */
     [0] = LAYOUT_split_3x6_4(
-        KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        KC_LCTL, KC_A,    KC_S,    KC_D,    LSFT_T(KC_F), KC_G,                          KC_H,    RSFT_T(KC_J), KC_K, KC_L,   KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                                            KC_TAB,  KC_LGUI, KC_SPC,  MO(1),            MO(2),   KC_SPC,  KC_ENT,  KC_RALT
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+        LT(5,KC_BSPC), LCTL_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LSFT_T(KC_F), KC_G,     KC_H,    RSFT_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RCTL_T(KC_SCLN), KC_QUOT,
+        KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+                                            KC_LGUI, MO(1),   KC_SPC,  SGUI(KC_SPC),     RALT(KC_SPC), KC_SPC, KC_ENT, KC_RALT
     ),
 
      /*
@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *           └───┴───┴───┴───┘   └───┴───┴───┴───┘
       */
     [2] = LAYOUT_split_3x6_4(
-        _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_TILD, KC_CIRC, KC_AMPR, KC_ASTR, KC_PLUS, _______,
-        _______, KC_LPRN, KC_LBRC, KC_LCBR, KC_LABK, KC_UNDS,                            KC_MINS, KC_RABK, KC_RCBR, KC_RBRC, KC_RPRN, _______,
-        _______, _______, _______, _______, KC_PIPE, KC_EQL,                             KC_BSLS, _______, _______, _______, _______, _______,
+        _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5),                            S(KC_GRV), S(KC_6), S(KC_7), S(KC_8), S(KC_EQL), _______,
+        _______, S(KC_9), KC_LBRC, S(KC_LBRC), S(KC_COMM), S(KC_MINS),                   KC_MINS, S(KC_DOT), S(KC_RBRC), KC_RBRC, S(KC_0), _______,
+        _______, _______, _______, _______, S(KC_BSLS), KC_EQL,                          KC_BSLS, _______, _______, _______, _______, _______,
                                             _______, _______, MO(3),   _______,          _______, _______, _______, _______
     ),
 
@@ -107,11 +107,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
      /*
-      * LAYER 5 - RESERVED (No-op for now)
+      * LAYER 5 - MOUSE CONTROLS (Hold L5/Bsp on home row)
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
+      * │   │   │   │   │   │   │       │   │Btn1│Btn2│   │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
+      * │   │   │   │   │   │   │       │ ← │ ↓ │ ↑ │ → │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │   │   │   │   │   │   │       │   │   │   │   │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
@@ -120,8 +120,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *           └───┴───┴───┴───┘   └───┴───┴───┴───┘
       */
     [5] = LAYOUT_split_3x6_4(
-        _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                            _______, KC_BTN1, KC_BTN2, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                            KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______,
         _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
                                             _______, _______, _______, _______,          _______, _______, _______, _______
     )
@@ -140,35 +140,32 @@ static uint8_t current_layer = 0;
 layer_state_t layer_state_set_user(layer_state_t state) {
     uint8_t new_layer = get_highest_layer(state);
 
-    // Only send if layer actually changed
     if (new_layer != current_layer) {
         current_layer = new_layer;
 
-        // Send HID message: [MSG_ID, LAYER, 0, 0, ..., 0] (32 bytes total)
         uint8_t data[32] = {0};
         data[0] = MSG_LAYER_UPDATE;
         data[1] = current_layer;
 
         raw_hid_send(data, sizeof(data));
 
-        // Set RGB color based on layer
         switch (current_layer) {
-            case 0:  // Base layer - Cyan (closest to #264653)
+            case 0:
                 rgblight_sethsv_noeeprom(HSV_CYAN);
                 break;
-            case 1:  // Numbers & Navigation - Teal
-                rgblight_sethsv_noeeprom(HSV_TEAL);
-                break;
-            case 2:  // Symbols & Brackets - Spring green (closest to #8ab17d)
+            case 1:
                 rgblight_sethsv_noeeprom(HSV_SPRINGGREEN);
                 break;
-            case 3:  // Function Keys & Media - Gold/Yellow
+            case 2:
                 rgblight_sethsv_noeeprom(HSV_GOLD);
                 break;
-            case 4:  // Reserved - Orange
+            case 3:
+                rgblight_sethsv_noeeprom(HSV_TEAL);
+                break;
+            case 4:
                 rgblight_sethsv_noeeprom(HSV_ORANGE);
                 break;
-            case 5:  // Reserved - Coral
+            case 5:
                 rgblight_sethsv_noeeprom(HSV_CORAL);
                 break;
             default:
