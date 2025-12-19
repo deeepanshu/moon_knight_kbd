@@ -6,11 +6,11 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * LAYER 0 - BASE (Default typing layer)
-      * Home Row Mods: All home row keys are mod-taps
+      * Home Row Mods: Only F and J are shift mod-taps
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
       * │Tab│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │Bsp│
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │L5/Bsp│Ctl/A│GUI/S│Alt/D│Sft/F│ G │ │ H │Sft/J│Alt/K│GUI/L│Ctl/;│ ' │
+      * │L5/Bsp│ A │ S │ D │Sft/F│ G │  │ H │Sft/J│ K │ L │ ; │ ' │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
       * │Esc│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │Sft│
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       */
     [0] = LAYOUT_split_3x6_4(
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        LT(5,KC_BSPC), LCTL_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LSFT_T(KC_F), KC_G,     KC_H,    RSFT_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RCTL_T(KC_SCLN), KC_QUOT,
+        LT(5,KC_BSPC), KC_A, KC_S, KC_D, LSFT_T(KC_F), KC_G,                             KC_H,    RSFT_T(KC_J), KC_K, KC_L, KC_SCLN, KC_QUOT,
         KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                                             KC_LGUI, MO(1),   KC_SPC,  SGUI(KC_SPC),     RALT(KC_SPC), KC_SPC, KC_ENT, KC_RALT
     ),
@@ -28,42 +28,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * LAYER 1 - NUMBERS & NAVIGATION (Hold left MO(1))
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │Del│
+      * │   │ 7 │ 8 │ 9 │ 0 │ [ │       │ ] │ \ │   │   │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │   │       │ ← │ ↓ │ ↑ │ → │   │   │
+      * │   │ 4 │ 5 │ 6 │ - │ = │       │ ← │ ↓ │ ↑ │ → │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │   │       │Hom│PgD│PgU│End│   │   │
+      * │Sft│ 1 │ 2 │ 3 │   │   │       │Hom│PgD│PgU│End│   │Sft│
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *           ┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
-      *           │   │   │   │   │   │   │   │   │   │
+      *           │   │   │ 0 │   │   │   │   │   │   │
       *           └───┴───┴───┴───┘   └───┴───┴───┴───┘
       */
     [1] = LAYOUT_split_3x6_4(
-        _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-        _______, _______, _______, _______, _______, _______,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
-        _______, _______, _______, _______, _______, _______,                            KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
-                                            _______, _______, _______, _______,          _______, _______, _______, _______
+        _______, KC_7,    KC_8,    KC_9,    KC_0,    KC_LBRC,                            KC_RBRC, KC_BSLS, _______, _______, _______, _______,
+        _______, KC_4,    KC_5,    KC_6,    KC_MINS, KC_EQL,                             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
+        KC_LSFT, KC_1,    KC_2,    KC_3,    _______, _______,                            KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, KC_RSFT,
+                                            _______, _______, KC_0,    _______,          _______, _______, _______, _______
     ),
 
      /*
-      * LAYER 2 - SYMBOLS & BRACKETS (Hold right MO(2))
-      * Mirrored brackets: Left hand opens, right hand closes
+      * LAYER 2 - RESERVED (Mostly transparent)
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │   │ ! │ @ │ # │ $ │ % │       │ ~ │ ^ │ & │ * │ + │   │
+      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │ ( │ [ │ { │ < │ _ │       │ - │ > │ } │ ] │ ) │   │
+      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │   │   │   │   │ | │ = │       │ \ │   │   │   │   │   │
+      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *           ┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
-      *           │   │   │L3 │   │   │   │   │   │   │
+      *           │   │   │L3 │App│   │   │   │   │   │
       *           └───┴───┴───┴───┘   └───┴───┴───┴───┘
       */
     [2] = LAYOUT_split_3x6_4(
-        _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5),                            S(KC_GRV), S(KC_6), S(KC_7), S(KC_8), S(KC_EQL), _______,
-        _______, S(KC_9), KC_LBRC, S(KC_LBRC), S(KC_COMM), S(KC_MINS),                   KC_MINS, S(KC_DOT), S(KC_RBRC), KC_RBRC, S(KC_0), _______,
-        _______, _______, _______, _______, S(KC_BSLS), KC_EQL,                          KC_BSLS, _______, _______, _______, _______, _______,
-                                            _______, _______, MO(3),   _______,          _______, _______, _______, _______
+        _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
+                                            _______, _______, MO(3),   KC_APP,           _______, _______, _______, _______
     ),
 
      /*
