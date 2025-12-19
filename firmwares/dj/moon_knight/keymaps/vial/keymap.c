@@ -148,29 +148,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
         raw_hid_send(data, sizeof(data));
 
-        switch (current_layer) {
-            case 0:
-                rgblight_sethsv_noeeprom(HSV_CYAN);
-                break;
-            case 1:
-                rgblight_sethsv_noeeprom(HSV_SPRINGGREEN);
-                break;
-            case 2:
-                rgblight_sethsv_noeeprom(HSV_GOLD);
-                break;
-            case 3:
-                rgblight_sethsv_noeeprom(HSV_TEAL);
-                break;
-            case 4:
-                rgblight_sethsv_noeeprom(HSV_ORANGE);
-                break;
-            case 5:
-                rgblight_sethsv_noeeprom(HSV_CORAL);
-                break;
-            default:
-                rgblight_sethsv_noeeprom(HSV_CYAN);
-                break;
-        }
+        // Rainbow effect stays consistent across all layers
+        // Layer change info is still sent via HID for external tools
     }
 
     return state;
@@ -187,7 +166,6 @@ void keyboard_post_init_user(void) {
     // debug_keyboard=true;
 
     rgblight_enable_noeeprom();
-    rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);  // Solid color mode
-    rgblight_sethsv_noeeprom(HSV_CYAN);  // Start with layer 0 color
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL);  // Rainbow swirl animation
 }
 
