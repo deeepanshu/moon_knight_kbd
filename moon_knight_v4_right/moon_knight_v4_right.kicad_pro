@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 3.0,
-          "width": 1.5
+          "drill": 0.8,
+          "height": 1.27,
+          "width": 2.54
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -102,7 +102,7 @@
         "shorting_items": "error",
         "silk_edge_clearance": "ignore",
         "silk_over_copper": "ignore",
-        "silk_overlap": "warning",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
@@ -464,12 +464,10 @@
   },
   "libraries": {
     "pinned_footprint_libs": [],
-    "pinned_symbol_libs": [
-      "PCM_marbastlib-promicroish"
-    ]
+    "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "moon_knight_v4.kicad_pro",
+    "filename": "moon_knight_v4_right.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -578,12 +576,36 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -629,7 +651,7 @@
   },
   "sheets": [
     [
-      "5b170dd8-c34c-41f7-b4e8-0b50c8e02719",
+      "8e7e5aad-8ac4-49ce-af1c-1613aba74f0c",
       "Root"
     ]
   ],
