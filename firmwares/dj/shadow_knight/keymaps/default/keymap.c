@@ -1,0 +1,121 @@
+// Copyright 2023 QMK
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#include QMK_KEYBOARD_H
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+     /*
+      * LAYER 0 - BASE (Default typing layer)
+      * Home Row Mods: F and J act as Shift when held
+      * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+      * │Esc│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │Bsp│
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │Ctl│ A │ S │ D │F/Sft│ G │     │ H │J/Sft│ K │ L │ ; │ ' │
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │Sft│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │Sft│
+      * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+      *           ┌───┬───┬───┐       ┌───┬───┬───┐
+      *           │Tab│GUI│Spc│       │L2 │Spc│Ent│
+      *           └───┴───┴───┘       └───┴───┴───┘
+      */
+    [0] = LAYOUT_split_3x6_3(
+        KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+        KC_LCTL, KC_A,    KC_S,    KC_D,    LSFT_T(KC_F), KC_G,                          KC_H,    RSFT_T(KC_J), KC_K, KC_L,   KC_SCLN, KC_QUOT,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+                                            KC_TAB,  KC_LGUI, KC_SPC,                     MO(2),   KC_SPC,  KC_ENT
+    ),
+
+     /*
+      * LAYER 1 - NUMBERS & NAVIGATION
+      * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+      * │   │ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │Del│
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │   │   │   │   │   │   │       │ ← │ ↓ │ ↑ │ → │   │   │
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │   │   │   │   │   │   │       │Hom│PgD│PgU│End│   │   │
+      * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+      *           ┌───┬───┬───┐       ┌───┬───┬───┐
+      *           │   │   │   │       │   │   │   │
+      *           └───┴───┴───┘       └───┴───┴───┘
+      */
+    [1] = LAYOUT_split_3x6_3(
+        _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
+        _______, _______, _______, _______, _______, _______,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
+        _______, _______, _______, _______, _______, _______,                            KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
+                                            _______, _______, _______,                    _______, _______, _______
+    ),
+
+     /*
+      * LAYER 2 - SYMBOLS & BRACKETS (Hold right MO(2))
+      * Mirrored brackets: Left hand opens, right hand closes
+      * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+      * │   │ ! │ @ │ # │ $ │ % │       │ ~ │ ^ │ & │ * │ + │   │
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │   │ ( │ [ │ { │ < │ _ │       │ - │ > │ } │ ] │ ) │   │
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │   │   │   │   │ | │ = │       │ \ │   │   │   │   │   │
+      * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+      *           ┌───┬───┬───┐       ┌───┬───┬───┐
+      *           │   │   │L3 │       │   │   │   │
+      *           └───┴───┴───┘       └───┴───┴───┘
+      */
+    [2] = LAYOUT_split_3x6_3(
+        _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_TILD, KC_CIRC, KC_AMPR, KC_ASTR, KC_PLUS, _______,
+        _______, KC_LPRN, KC_LBRC, KC_LCBR, KC_LABK, KC_UNDS,                            KC_MINS, KC_RABK, KC_RCBR, KC_RBRC, KC_RPRN, _______,
+        _______, _______, _______, _______, KC_PIPE, KC_EQL,                             KC_BSLS, _______, _______, _______, _______, _______,
+                                            _______, _______, MO(3),                      _______, _______, _______
+    ),
+
+     /*
+      * LAYER 3 - FUNCTION KEYS & MEDIA (Hold MO(2) then press MO(3))
+      * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+      * │F1 │F2 │F3 │F4 │F5 │F6 │       │F7 │F8 │F9 │F10│F11│F12│
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │   │   │   │   │   │   │       │Prv│Vl-│Vl+│Nxt│Mut│Ply│
+      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+      * │   │   │   │   │   │   │       │   │   │   │   │   │   │
+      * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+      *           ┌───┬───┬───┐       ┌───┬───┬───┐
+      *           │   │   │   │       │   │   │   │
+      *           └───┴───┴───┘       └───┴───┴───┘
+      */
+    [3] = LAYOUT_split_3x6_3(
+        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                              KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+        _______, _______, _______, _______, _______, _______,                            KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MUTE, KC_MPLY,
+        _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
+                                            _______, _______, _______,                    _______, _______, _______
+    )
+};
+
+void keyboard_post_init_user(void) {
+    debug_enable=true;
+    debug_matrix=true;
+    debug_keyboard=true;
+
+    rgblight_enable_noeeprom();
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_MOOD + 1);
+
+    // Setup GP16 as output for layer indicator LED
+    gpio_set_pin_output(GP16);
+    gpio_write_pin_low(GP16);  // Start with LED off
+
+    uprintf("Keyboard initialized!\n");
+    uprintf("Is master: %d\n", is_keyboard_master());
+    uprintf("Split enabled: %d\n", 1);
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    // LED behavior based on active layer
+    switch (get_highest_layer(state)) {
+        case 0:  // Base layer
+            gpio_write_pin_low(GP16);  // MCU LED off
+            break;
+        case 1:  // Numbers layer
+        case 2:  // Symbols layer
+        case 3:  // Function layer
+            gpio_write_pin_high(GP16);  // MCU LED on
+            break;
+    }
+    return state;
+}
+

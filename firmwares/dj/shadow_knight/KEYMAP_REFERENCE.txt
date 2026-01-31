@@ -1,0 +1,313 @@
+===============================================================================
+DJ MOON KNIGHT KEYBOARD - KEYMAP REFERENCE
+===============================================================================
+
+LAYER 0 - BASE (Default typing layer)
+Home Row Mods: F and J act as Shift when held
+
+┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+│Esc│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │Bsp│
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│Ctl│ A │ S │ D │F/Sft│ G │     │ H │J/Sft│ K │ L │ ; │ ' │
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│Sft│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │Sft│
+└───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+          ┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
+          │Tab│GUI│Spc│L1 │   │L2 │Spc│Ent│Alt│
+          └───┴───┴───┴───┘   └───┴───┴───┴───┘
+
+MCU LED: OFF
+
+===============================================================================
+
+LAYER 1 - NUMBERS & NAVIGATION (Hold MO(1) - 4th thumb key left)
+
+┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+│   │ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │Del│
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │       │ ← │ ↓ │ ↑ │ → │   │   │
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │       │Hom│PgD│PgU│End│   │   │
+└───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+          ┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
+          │   │   │   │   │   │   │   │   │   │
+          └───┴───┴───┴───┘   └───┴───┴───┴───┘
+
+MCU LED: ON
+
+Usage:
+- Hold MO(1) (4th thumb key left) to access numbers and navigation
+- Vim-style arrow keys on H, J, K, L (← ↓ ↑ →)
+- Home/End/PageUp/PageDown on bottom row right
+- Delete key on top right corner
+
+===============================================================================
+
+LAYER 2 - SYMBOLS & BRACKETS (Hold MO(2) - 1st thumb key right)
+Mirrored brackets: Left hand opens, right hand closes
+
+┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+│   │ ! │ @ │ # │ $ │ % │       │ ~ │ ^ │ & │ * │ + │   │
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│   │ ( │ [ │ { │ < │ _ │       │ - │ > │ } │ ] │ ) │   │
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │ | │ = │       │ \ │   │   │   │   │   │
+└───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+          ┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
+          │   │   │   │L3 │   │   │   │   │   │
+          └───┴───┴───┴───┘   └───┴───┴───┴───┘
+
+MCU LED: ON
+
+Usage:
+- Hold MO(2) (1st thumb key right) to access symbols
+- Bracket pairs are mirrored across hands:
+  - ( on left, ) on right (same column position)
+  - [ on left, ] on right (same column position)
+  - { on left, } on right (same column position)
+  - < on left, > on right (same column position)
+- To access Layer 3: Hold MO(2), then press L3 position (4th thumb left)
+
+===============================================================================
+
+LAYER 3 - FUNCTION KEYS & MEDIA (Hold MO(2) then press L3)
+
+┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+│F1 │F2 │F3 │F4 │F5 │F6 │       │F7 │F8 │F9 │F10│F11│F12│
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │       │Prv│Vl-│Vl+│Nxt│Mut│Ply│
+├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │   │   │       │   │   │   │   │   │   │
+└───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+          ┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
+          │   │   │   │   │   │   │   │   │   │
+          └───┴───┴───┴───┘   └───┴───┴───┴───┘
+
+MCU LED: ON
+
+Usage:
+- Function keys F1-F12 across entire top row
+- Media controls on home row right:
+  - Prv = Previous track
+  - Vl- = Volume Down
+  - Vl+ = Volume Up
+  - Nxt = Next track
+  - Mut = Mute
+  - Ply = Play/Pause
+
+===============================================================================
+
+QUICK REFERENCE GUIDE
+
+Layer Access:
+- Layer 0 (Base): Default layer
+- Layer 1 (Numbers): Hold 4th thumb key on LEFT side
+- Layer 2 (Symbols): Hold 1st thumb key on RIGHT side
+- Layer 3 (Function): Hold MO(2), then press the L3 position (4th thumb left)
+
+Home Row Mods:
+- F key: Tap = 'f', Hold = Left Shift
+- J key: Tap = 'j', Hold = Right Shift
+- Example: Hold F, press E = Capital E
+- Example: Hold J, press I = Capital I
+- Default timing threshold: ~200ms
+
+MCU LED Indicator (GP16):
+- OFF = Base layer (0)
+- ON = Any upper layer (1, 2, or 3)
+
+===============================================================================
+
+COMMON SYMBOL LOCATIONS (Layer 2)
+
+Programming Symbols:
+- Parentheses: ( on 2nd column left, ) on 2nd column right
+- Square brackets: [ on 3rd column left, ] on 3rd column right
+- Curly braces: { on 4th column left, } on 4th column right
+- Angle brackets: < on 5th column left, > on 5th column right
+
+Other Symbols:
+- Pipe: | (left bottom row, 5th column)
+- Backslash: \ (right bottom row, 1st column)
+- Equals: = (left bottom row, 6th column)
+- Minus/Dash: - (right home row, 1st column)
+- Underscore: _ (left home row, 6th column)
+- Plus: + (right top row, 5th column)
+
+Common Coding Characters:
+- ! @ # $ % on top row left
+- ~ ^ & * on top row right
+
+===============================================================================
+
+TIPS & TRICKS
+
+Typing Numbers:
+Hold the 4th left thumb key (MO1) and type on the top row for numbers 1-0.
+The hold is momentary, so release to return to typing letters.
+
+Typing Symbols:
+Hold the 1st right thumb key (MO2) to access all programming symbols.
+Use mirrored brackets for efficient coding - left hand opens, right hand closes.
+
+Navigation:
+Use Layer 1 with Vim-style arrows (H/J/K/L) for efficient cursor movement
+without leaving home row. Perfect for code editing!
+
+Text Selection:
+Hold F or J (Shift) + arrows on Layer 1 to select text while navigating.
+
+Function Keys:
+Access Layer 3 for F1-F12 and media controls. Great for IDE shortcuts
+and controlling music without leaving your keyboard.
+
+Home Row Mods:
+Practice using F and J as Shift keys. The timing threshold is ~200ms.
+Quick tap = letter, longer press = shift modifier.
+
+Thumb Key Layout:
+Space keys are in the comfortable center positions for easy access.
+Layer keys are on the outer thumb positions for deliberate activation.
+
+===============================================================================
+
+HARDWARE SPECIFICATIONS
+
+Microcontroller: RP2040 (Pro Micro compatible)
+Split Communication: Serial USART Full-Duplex (GP6/GP7)
+RGB Underglow: WS2812 (44 LEDs, 22 per side)
+Matrix: 4 rows × 6 columns per side
+Layout: 3x6 split with 4 thumb keys per side
+
+Master Side: Left (defined by MASTER_LEFT)
+Serial Pins: GP6 (TX), GP7 (RX)
+RGB Pin Left: GP28
+RGB Pin Right: GP28
+Status LED: GP16
+
+===============================================================================
+
+FIRMWARE INFORMATION
+
+Keyboard: dj/moon_knight
+Keymap: default
+Firmware File: dj_moon_knight_default.uf2
+
+Features Enabled:
+- Bootmagic
+- Extrakey (media keys)
+- Mousekey
+- NKRO (N-Key Rollover)
+- RGBLight (underglow)
+- Console (debugging)
+- Command
+
+Features NOT Enabled:
+- VIA (for live remapping, can be enabled later)
+
+QMK Version: Latest from qmk_firmware repository
+
+===============================================================================
+
+FLASHING INSTRUCTIONS
+
+1. Locate the compiled firmware: dj_moon_knight_default.uf2
+2. Put keyboard into bootloader mode:
+   - Unplug USB
+   - Hold BOOTSEL button on Pro Micro
+   - Plug in USB while holding BOOTSEL
+   - Release BOOTSEL button
+3. Device should appear as USB storage device (RPI-RP2)
+4. Drag and drop the .uf2 file onto the device
+5. Device will automatically reboot with new firmware
+6. Repeat steps 2-5 for the other half
+
+Important: Flash BOTH halves with the same firmware for layers to work!
+
+===============================================================================
+
+TROUBLESHOOTING
+
+If layers don't work:
+1. Ensure you've flashed BOTH halves with the same firmware
+2. Check that split communication is working (both sides respond)
+3. VIA must be disabled for compiled keymap to work
+
+If home row mods feel weird:
+You can adjust the timing in config.h by adding:
+#define TAPPING_TERM 200  (default is 200ms)
+Lower = faster shift activation, Higher = more time to decide
+
+If split handshake fails:
+1. Check TRRS cable connections
+2. Verify serial pins are not conflicting with matrix
+3. Check config.h for proper serial configuration
+4. Try flashing both halves again
+
+If MCU LED doesn't work:
+1. Check GP16 connection to LED
+2. Verify LED polarity is correct
+3. Check that LED is not conflicting with other features
+
+===============================================================================
+
+CUSTOMIZATION GUIDE
+
+Want to change the keymap?
+Edit: keyboards/dj/moon_knight/keymaps/default/keymap.c
+Then recompile: qmk compile -kb dj/moon_knight -km default
+
+Want to adjust home row mod timing?
+Add to config.h: #define TAPPING_TERM <milliseconds>
+
+Want to enable VIA for live remapping?
+1. Add "via": true to keyboard.json features
+2. Recompile firmware
+3. Use VIA configurator to remap keys without reflashing
+
+Want different RGB effects?
+The keyboard has rgblight enabled. Use standard QMK RGB controls
+or customize in keyboard_post_init_user() function.
+
+===============================================================================
+
+LAYOUT PHILOSOPHY
+
+This keymap is designed for software engineers with focus on:
+
+1. Ergonomics: Home row mods reduce finger travel
+2. Efficiency: Vim navigation keeps hands on home row
+3. Logic: Mirrored brackets make sense (left opens, right closes)
+4. Comfort: Space in center, layers on outer thumbs
+5. Indicators: MCU LED shows when you're in a layer
+
+The 4-layer design covers all essential keys:
+- Layer 0: All letters and basic punctuation
+- Layer 1: Numbers and navigation (most used upper layer)
+- Layer 2: Symbols for programming
+- Layer 3: Function keys and media (least used)
+
+===============================================================================
+
+VERSION HISTORY
+
+v1.0 - Initial keymap
+     - 4 layers: Base, Numbers, Symbols, Function
+     - Home row mods on F and J
+     - Mirrored bracket layout for programming
+     - Vim-style navigation on Layer 1
+     - F1-F12 and media controls on Layer 3
+     - Space keys in center thumb positions
+     - Layer keys on outer thumb positions
+     - MCU LED layer indicator
+
+===============================================================================
+
+CREDITS
+
+Keyboard Designer: Deepanshu Jain
+Keymap Author: Deepanshu Jain
+Firmware: QMK Firmware
+Hardware: RP2040 Pro Micro, WS2812 RGB LEDs
+
+===============================================================================
